@@ -1,0 +1,188 @@
+
+/* Basic page styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+}
+
+.container {
+    text-align: center;
+    color: white;
+    padding: 25px;
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.container p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 22px;
+    font-size: 1rem;
+    transition: transform 0.2s, background 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+#openModal {
+    background: white;
+    color: #6246a5;
+    font-weight: bold;
+}
+
+/* Background overlay */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s;
+    z-index: 1000;
+}
+
+/* Show overlay */
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal box */
+.modal {
+    background: white;
+    width: 100%;
+    max-width: 420px;
+    padding: 35px 25px;
+    border-radius: 18px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+    transform: translateY(25px) scale(0.95);
+    transition: transform 0.3s ease;
+}
+
+.overlay.active .modal {
+    transform: translateY(0) scale(1);
+}
+
+/* Close button */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background: transparent;
+    font-size: 28px;
+    color: #777;
+    padding: 5px 10px;
+}
+
+.close-btn:hover {
+    color: #222;
+}
+
+.modal-icon {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.modal h2 {
+    font-size: 1.7rem;
+    margin-bottom: 12px;
+    color: #333;
+}
+
+.modal > p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 22px;
+}
+
+/* Form styling */
+#newsletterForm {
+    text-align: left;
+}
+
+#newsletterForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+#email {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    outline: none;
+}
+
+#email:focus {
+    border-color: #764ba2;
+    box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.15);
+}
+
+.submit-btn {
+    width: 100%;
+    background: #764ba2;
+    color: white;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    background: #5e368b;
+}
+
+#message {
+    font-size: 0.9rem;
+    margin-top: 12px;
+    text-align: center;
+}
+
+.modal small {
+    display: block;
+    color: #888;
+    margin-top: 18px;
+}
+
+/* Mobile responsive design */
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 2rem;
+    }
+
+    .modal {
+        padding: 30px 20px;
+    }
+
+    .modal h2 {
+        font-size: 1.4rem;
+    }
+}
